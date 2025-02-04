@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <title>Contact - Evariste's Website</title>
     <style>
         body {
             font-family: Verdana, sans-serif;
@@ -13,12 +13,18 @@
             text-align: center;
         }
 
-        h1 {
-            font-size: 48px;
-            margin-top: 20px;
+        header {
+            background: rgb(205, 167, 167);
+            padding: 20px;
+            border-bottom: 2px solid black;
         }
 
-        .contact-info {
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        main {
             max-width: 600px;
             margin: 20px auto;
             background: white;
@@ -27,31 +33,50 @@
             text-align: left;
         }
 
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
         footer {
             margin-top: 20px;
             padding: 10px;
             background: black;
             color: white;
         }
-
-        a {
-            text-decoration: none;
-            color: blue;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
-    <h1>Contact Me</h1>
+    <header>
+        <h1>Contact Me</h1>
+    </header>
 
-    <div class="contact-info">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Get in Touch</h2>
         <p><strong>Email:</strong> Omebe_Evariste@roberts.edu</p>
         <p><strong>Phone:</strong> (585) 286-8790</p>
         <p><strong>Address:</strong> 2301 Westside Dr, Rochester, NY 14624</p>
-    </div>
+    </main>
 
     <footer>
-        <p><a href="index.html">Back to Home</a></p>
+        <p><script>document.write("Last modified: " + document.lastModified);</script></p>
     </footer>
 </body>
 </html>
