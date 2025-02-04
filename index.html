@@ -9,17 +9,19 @@
                 font-family: Verdana, sans-serif;
                 margin: 0;
                 padding: 0;
-                background-color: #f4f4f4;
+                background-color: #f07a7a;
                 text-align: center;
             }
 
+            header {
+                background: rgb(205, 167, 167);
+                padding: 20px;
+                border-bottom: 2px solid black;
+            }
+
             h1 {
-                border: 1px solid black;
                 font-size: 72px;
-                padding: 10px;
-                margin: 20px auto;
-                display: inline-block;
-                background: white;
+                margin: 0;
             }
 
             nav ul {
@@ -44,6 +46,18 @@
                 background: white;
                 padding: 20px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+
+            aside {
+                margin-top: 20px;
+                padding: 15px;
+                background: #e0e0e0;
+                border-radius: 5px;
+            }
+
+            .quick-list {
+                margin-top: 20px;
             }
 
             footer {
@@ -55,13 +69,16 @@
         </style>
     </head>
     <body>
-        <h1>Evariste's Website</h1>
+        <header>
+            <h1>Evariste's Website</h1>
+        </header>
 
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
+
             </ul>
         </nav>
 
@@ -86,20 +103,18 @@
             <section class="quick-list">
                 <h2>Quick List</h2>
                 <ul>
-                    <li>Validate HTML, CSS, and JS</li>
-                    <li>Use structured elements (header, nav, main, footer)</li>
-                    <li>Style with CSS (borders, fonts, colors)</li>
-                    <li>Add JavaScript for interaction</li>
-                    <li>Test on different browsers</li>
-                </ul>
+                    <li><strong>✅ Validate HTML, CSS, and JS</strong></li>
+                    <li><strong>✅ Use structured elements</strong></li>
+                    <li><strong>✅ Style with CSS</strong></li>
+                    <li><strong>✅ Add JavaScript</strong></li>
+                    <li><strong>✅ Test on different browsers</strong></li>
+                </ul>                
             </section>
         </main>
 
         <footer>
             <p>I'm currently learning HTML, CSS, and JavaScript.</p>
-            <script>
-                document.write("Last modified: " + document.lastModified);
-            </script>
+            <p><script>document.write("Last modified: " + document.lastModified);</script></p>
         </footer>
     </body>
 </html>
