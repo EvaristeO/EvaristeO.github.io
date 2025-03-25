@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive OOP Concepts</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f0f0f0; }
+        h1 { text-align: center; }
+        .container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .card { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px; }
+        button { padding: 10px 20px; margin-top: 10px; cursor: pointer; border: none; background-color: #4CAF50; color: white; border-radius: 5px; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Interactive OOP Concepts</h1>
+    <div class="container">
+
+        <div class="card" id="encapsulation">
+            <h2>Encapsulation</h2>
+            <p>Change the car's speed and check it:</p>
+            <input type="number" id="speedInput" placeholder="Set Speed"> <br>
+            <button onclick="setSpeed()">Set Speed</button>
+            <button onclick="getSpeed()">Get Speed</button>
+            <p id="speedResult"></p>
+        </div>
+
+        <div class="card" id="inheritance">
+            <h2>Inheritance</h2>
+            <button onclick="dogSpeak()">Dog Speak</button>
+            <p id="inheritanceResult"></p>
+        </div>
+
+        <div class="card" id="polymorphism">
+            <h2>Polymorphism</h2>
+            <button onclick="animalSounds()">Make Sounds</button>
+            <p id="polymorphismResult"></p>
+        </div>
+
+        <div class="card" id="abstraction">
+            <h2>Abstraction</h2>
+            <button onclick="turnOnDevice()">Turn On Device</button>
+            <p id="abstractionResult"></p>
+        </div>
+
+    </div>
+
+    <script>
+        // Encapsulation
+        class Car {
+            #speed = 0; // Private property
+
+            setSpeed(value) {
+                if (value >= 0) this.#speed = value;
+            }
+
+            getSpeed() {
+                return this.#speed;
+            }
+        }
+
+        const myCar = new Car();
+
+        function setSpeed() {
+            const speed = document.getElementById('speedInput').value;
+            myCar.setSpeed(Number(speed));
+            document.getElementById('speedResult').innerText = `Speed set to ${speed}`;
+        }
+
+        function getSpeed() {
+            document.getElementById('speedResult').innerText = `Current Speed: ${myCar.getSpeed()}`;
+        }
+
+        // Inheritance
+        class Animal {
+            speak() { return 'Some sound'; }
+        }
+
+        class Dog extends Animal {
+            speak() { return 'Bark!'; }
+        }
+
+        function dogSpeak() {
+            const dog = new Dog();
+            document.getElementById('inheritanceResult').innerText = dog.speak();
+        }
+
+        // Polymorphism
+        class Cat {
+            makeSound() { return 'Meow'; }
+        }
+
+        class Cow {
+            makeSound() { return 'Moo'; }
+        }
+
+        function animalSounds() {
+            const animals = [new Cat(), new Cow()];
+            const sounds = animals.map(a => a.makeSound()).join(', ');
+            document.getElementById('polymorphismResult').innerText = sounds;
+        }
+
+        // Abstraction
+        class Device {
+            turnOn() {
+                throw new Error('Method must be implemented.');
+            }
+        }
+
+        class Phone extends Device {
+            turnOn() {
+                return 'Phone is now ON';
+            }
+        }
+
+        function turnOnDevice() {
+            const phone = new Phone();
+            document.getElementById('abstractionResult').innerText = phone.turnOn();
+        }
+
+    </script>
+</body>
+</html>
