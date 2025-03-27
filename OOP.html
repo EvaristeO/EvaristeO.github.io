@@ -16,10 +16,23 @@
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <!-- Home Button -->
+            <li>
+                <button onclick="window.location.href='index.html';" class="home-button">Home</button>
+            </li>
+        </ul>
+    </nav>
+    
     <h1>Interactive OOP Concepts</h1>
     <div class="container">
 
-        <!-- Encapsulation: Controlling access to an object's data -->
+        <!-- Encapsulation: Controlling access to an object's data 
+        The Car class encapsulates the speed property by making it private (using #speed), 
+        so it cannot be directly accessed from outside the class. 
+        The only way to modify or view the speed is through the setSpeed() and getSpeed() methods, 
+        which provide controlled access to the speed property. -->
         <div class="card" id="encapsulation">
             <h2>Encapsulation</h2>
             <p>Change the car's speed and check it:</p>
@@ -29,7 +42,12 @@
             <p id="speedResult"></p>
         </div>
 
-        <!-- Inheritance: One class (Dog) derives from another (Animal) -->
+        <!-- Inheritance: One class (Dog) derives from another (Animal)
+        Inheritance allows a class (e.g., Dog) to inherit properties and methods from another class (e.g., Animal). 
+        In this case, the Dog class inherits the speak() method from the Animal class but overrides it to provide its own behavior (Bark!). 
+        This allows code reuse and easier maintenance by allowing common functionality to be shared across different classes.
+         focuses more on the idea of creating new classes based on existing ones and code reuse,
+--> 
         <div class="card" id="inheritance">
             <h2>Inheritance</h2>
             <button onclick="dogSpeak()">Dog Speak</button>
@@ -38,14 +56,26 @@
             <p id="inheritanceResult"></p>
         </div>
 
-        <!-- Polymorphism: Different classes implementing the same method differently -->
+        <!-- Polymorphism: Different classes implementing the same method differently 
+        Polymorphism allows different animal classes (like Cat and Cow) to implement the same method, 
+        makeSound(), in their own unique ways. 
+        While both classes have a makeSound() method, the implementation differs: 
+        the Cat says 'Meow', and the Cow says 'Moo'. 
+        This allows the same method name to behave differently depending on the class.
+        the ability for different objects to behave differently while still using the same method name.
+        -->
         <div class="card" id="polymorphism">
             <h2>Polymorphism</h2>
             <button onclick="animalSounds()">Make Sounds</button>
             <p id="polymorphismResult"></p>
         </div>
 
-        <!-- Abstraction: Hiding implementation details and enforcing method overriding -->
+        <!-- Abstraction: Hiding implementation details and enforcing method overriding 
+        The Device class makes sure that every device has a turnOn() method, 
+        but each device can have its own way of turning on.
+        The turnOn() action is overridden in each specific device class to do something
+ -->
+         
         <div class="card" id="abstraction">
             <h2>Abstraction</h2>
             <button onclick="turnOnDevice('phone')">Turn On Phone</button>
