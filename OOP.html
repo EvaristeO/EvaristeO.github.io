@@ -15,11 +15,6 @@
         button:hover { background-color: #45a049; }
     </style>
 </head>
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-    </ul>
-</nav>
 <body>
     <h1>Interactive OOP Concepts</h1>
     <div class="container">
@@ -38,6 +33,8 @@
         <div class="card" id="inheritance">
             <h2>Inheritance</h2>
             <button onclick="dogSpeak()">Dog Speak</button>
+            <button onclick="catSpeak()">Cat Speak</button>
+            <button onclick="cowSpeak()">Cow Speak</button>
             <p id="inheritanceResult"></p>
         </div>
 
@@ -51,7 +48,9 @@
         <!-- Abstraction: Hiding implementation details and enforcing method overriding -->
         <div class="card" id="abstraction">
             <h2>Abstraction</h2>
-            <button onclick="turnOnDevice()">Turn On Device</button>
+            <button onclick="turnOnDevice('phone')">Turn On Phone</button>
+            <button onclick="turnOnDevice('laptop')">Turn On Laptop</button>
+            <button onclick="turnOnDevice('tablet')">Turn On Tablet</button>
             <p id="abstractionResult"></p>
         </div>
 
@@ -92,22 +91,44 @@
             speak() { return 'Bark!'; } // Overriding parent method with specific behavior
         }
 
+        class Cat extends Animal {
+            speak() { return 'Meow!'; } // Cat-specific behavior
+        }
+
+        class Cow extends Animal {
+            speak() { return 'Moo!'; } // Cow-specific behavior
+        }
+
         function dogSpeak() {
             const dog = new Dog(); // Creating a Dog instance
             document.getElementById('inheritanceResult').innerText = dog.speak(); // Calls overridden method
         }
 
-        // Polymorphism: Different classes implementing the same interface (makeSound)
-        class Cat {
-            makeSound() { return 'Meow'; } // Cat-specific implementation
+        function catSpeak() {
+            const cat = new Cat(); // Creating a Cat instance
+            document.getElementById('inheritanceResult').innerText = cat.speak(); // Calls overridden method
         }
 
-        class Cow {
-            makeSound() { return 'Moo'; } // Cow-specific implementation
+        function cowSpeak() {
+            const cow = new Cow(); // Creating a Cow instance
+            document.getElementById('inheritanceResult').innerText = cow.speak(); // Calls overridden method
+        }
+
+        // Polymorphism: Different classes implementing the same interface (makeSound)
+        class DogPolymorph {
+            makeSound() { return 'Bark'; }
+        }
+
+        class CatPolymorph {
+            makeSound() { return 'Meow'; }
+        }
+
+        class CowPolymorph {
+            makeSound() { return 'Moo'; }
         }
 
         function animalSounds() {
-            const animals = [new Cat(), new Cow()]; // Array of different animal types
+            const animals = [new DogPolymorph(), new CatPolymorph(), new CowPolymorph()]; // Array of different animal types
             const sounds = animals.map(a => a.makeSound()).join(', '); // Calls makeSound on each
             document.getElementById('polymorphismResult').innerText = sounds;
         }
@@ -125,9 +146,28 @@
             }
         }
 
-        function turnOnDevice() {
-            const phone = new Phone(); // Cannot create a direct instance of Device (abstract)
-            document.getElementById('abstractionResult').innerText = phone.turnOn();
+        class Laptop extends Device {
+            turnOn() {
+                return 'Laptop is now ON'; // Concrete implementation in subclass
+            }
+        }
+
+        class Tablet extends Device {
+            turnOn() {
+                return 'Tablet is now ON'; // Concrete implementation in subclass
+            }
+        }
+
+        function turnOnDevice(deviceType) {
+            let device;
+            if (deviceType === 'phone') {
+                device = new Phone();
+            } else if (deviceType === 'laptop') {
+                device = new Laptop();
+            } else if (deviceType === 'tablet') {
+                device = new Tablet();
+            }
+            document.getElementById('abstractionResult').innerText = device.turnOn(); // Call the respective device's turnOn method
         }
 
     </script>
