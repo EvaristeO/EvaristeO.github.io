@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive OOP Concepts</title>
     <style>
+        /* Basic styling for layout and aesthetics */
         * { box-sizing: border-box; }
         body { font-family: Arial, sans-serif; padding: 20px; background-color: #f0f0f0; }
         h1 { text-align: center; }
@@ -14,10 +15,16 @@
         button:hover { background-color: #45a049; }
     </style>
 </head>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+    </ul>
+</nav>
 <body>
     <h1>Interactive OOP Concepts</h1>
     <div class="container">
 
+        <!-- Encapsulation: Controlling access to an object's data -->
         <div class="card" id="encapsulation">
             <h2>Encapsulation</h2>
             <p>Change the car's speed and check it:</p>
@@ -27,18 +34,21 @@
             <p id="speedResult"></p>
         </div>
 
+        <!-- Inheritance: One class (Dog) derives from another (Animal) -->
         <div class="card" id="inheritance">
             <h2>Inheritance</h2>
             <button onclick="dogSpeak()">Dog Speak</button>
             <p id="inheritanceResult"></p>
         </div>
 
+        <!-- Polymorphism: Different classes implementing the same method differently -->
         <div class="card" id="polymorphism">
             <h2>Polymorphism</h2>
             <button onclick="animalSounds()">Make Sounds</button>
             <p id="polymorphismResult"></p>
         </div>
 
+        <!-- Abstraction: Hiding implementation details and enforcing method overriding -->
         <div class="card" id="abstraction">
             <h2>Abstraction</h2>
             <button onclick="turnOnDevice()">Turn On Device</button>
@@ -48,24 +58,24 @@
     </div>
 
     <script>
-        // Encapsulation
+        // Encapsulation: Hides object data and exposes only controlled access methods
         class Car {
-            #speed = 0; // Private property
+            #speed = 0; // Private property (not accessible outside the class)
 
             setSpeed(value) {
-                if (value >= 0) this.#speed = value;
+                if (value >= 0) this.#speed = value; // Controlled modification of speed
             }
 
             getSpeed() {
-                return this.#speed;
+                return this.#speed; // Controlled retrieval of speed
             }
         }
 
-        const myCar = new Car();
+        const myCar = new Car(); // Creating an instance of Car
 
         function setSpeed() {
             const speed = document.getElementById('speedInput').value;
-            myCar.setSpeed(Number(speed));
+            myCar.setSpeed(Number(speed)); // Setting speed through a method
             document.getElementById('speedResult').innerText = `Speed set to ${speed}`;
         }
 
@@ -73,50 +83,50 @@
             document.getElementById('speedResult').innerText = `Current Speed: ${myCar.getSpeed()}`;
         }
 
-        // Inheritance
+        // Inheritance: Child class (Dog) inherits from Parent class (Animal)
         class Animal {
-            speak() { return 'Some sound'; }
+            speak() { return 'Some sound'; } // Generic method for all animals
         }
 
         class Dog extends Animal {
-            speak() { return 'Bark!'; }
+            speak() { return 'Bark!'; } // Overriding parent method with specific behavior
         }
 
         function dogSpeak() {
-            const dog = new Dog();
-            document.getElementById('inheritanceResult').innerText = dog.speak();
+            const dog = new Dog(); // Creating a Dog instance
+            document.getElementById('inheritanceResult').innerText = dog.speak(); // Calls overridden method
         }
 
-        // Polymorphism
+        // Polymorphism: Different classes implementing the same interface (makeSound)
         class Cat {
-            makeSound() { return 'Meow'; }
+            makeSound() { return 'Meow'; } // Cat-specific implementation
         }
 
         class Cow {
-            makeSound() { return 'Moo'; }
+            makeSound() { return 'Moo'; } // Cow-specific implementation
         }
 
         function animalSounds() {
-            const animals = [new Cat(), new Cow()];
-            const sounds = animals.map(a => a.makeSound()).join(', ');
+            const animals = [new Cat(), new Cow()]; // Array of different animal types
+            const sounds = animals.map(a => a.makeSound()).join(', '); // Calls makeSound on each
             document.getElementById('polymorphismResult').innerText = sounds;
         }
 
-        // Abstraction
+        // Abstraction: Hiding details of the turnOn method, enforcing implementation
         class Device {
             turnOn() {
-                throw new Error('Method must be implemented.');
+                throw new Error('Method must be implemented.'); // Ensures method is defined in subclasses
             }
         }
 
         class Phone extends Device {
             turnOn() {
-                return 'Phone is now ON';
+                return 'Phone is now ON'; // Concrete implementation in subclass
             }
         }
 
         function turnOnDevice() {
-            const phone = new Phone();
+            const phone = new Phone(); // Cannot create a direct instance of Device (abstract)
             document.getElementById('abstractionResult').innerText = phone.turnOn();
         }
 
