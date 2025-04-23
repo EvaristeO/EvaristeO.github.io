@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy Site</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #222;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      transition: all 0.5s ease;
+    }
+    header {
+      padding: 20px;
+      background: #555;
+      text-align: center;
+      border-bottom: 5px solid #0ff;
+    }
+    main {
+      padding: 20px;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    #themeBtn { background-color: #0ff; color: #000; }
+    .rounded { border-radius: 20px; }
+    .square { border-radius: 0; }
+    .quote-box {
+      margin-top: 20px;
+      background: #333;
+      padding: 20px;
+      border-left: 5px solid #0ff;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      margin-right: 10px;
+      border: 2px solid #0ff;
+    }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Crazy Site</h1>
+    <button id="themeBtn" onclick="toggleTheme()">Change Theme</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>Random Motivator</h2>
+      <div class="quote-box" id="quoteBox">Click the button to get a random message</div>
+      <button onclick="showRandomMessage()">Get Message</button>
+    </section>
+
+    <section>
+      <h2>Leave a Message</h2>
+      <form onsubmit="submitMessage(); return false;">
+        <input type="text" id="messageInput" placeholder="Say something...">
+        <button type="submit">Submit</button>
+      </form>
+      <p id="displayMsg"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>This site uses arrays, DOM, CSS classes, JS functions, forms, and more.</p>
+    <p><script>document.write("Last modified: " + document.lastModified);</script></p>
+  </footer>
+
+  <script>
+    const messages = [
+      "Keep pushing.",
+      "You're doing great.",
+      "Don't stop now.",
+      "Success is near.",
+      "Focus and finish strong."
+    ];
+
+    function showRandomMessage() {
+      const i = Math.floor(Math.random() * messages.length);
+      document.getElementById("quoteBox").textContent = messages[i];
+    }
+
+    function submitMessage() {
+      const msg = document.getElementById("messageInput").value;
+      document.getElementById("displayMsg").textContent = `You said: ${msg}`;
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      if (body.style.backgroundColor === "white") {
+        body.style.backgroundColor = "#222";
+        body.style.color = "white";
+      } else {
+        body.style.backgroundColor = "white";
+        body.style.color = "black";
+      }
+    }
+  </script>
+</body>
+</html>
