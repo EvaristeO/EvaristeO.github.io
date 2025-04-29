@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive OOP Concepts</title>
+    <title>Interactive OOP Concepts/mixedbag</title>
     <style>
         /* Basic styling for layout and aesthetics */
         * { box-sizing: border-box; }
@@ -13,6 +13,20 @@
         .card { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px; }
         button { padding: 10px 20px; margin-top: 10px; cursor: pointer; border: none; background-color: #4CAF50; color: white; border-radius: 5px; }
         button:hover { background-color: #45a049; }
+        .animal-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .animal-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -24,14 +38,26 @@
             </li>
         </ul>
     </nav>
-    
+
     <h1>Interactive OOP Concepts</h1>
     <div class="container">
+        <!-- Inheritance: One class (Dog) derives from another (Animal)
+        Inheritance allows a class (e.g., Dog) to inherit properties and methods from another class (e.g., Animal).
+        In this case, the Dog class inherits the speak() method from the Animal class but overrides it to provide its own behavior (Bark!).
+        This allows code reuse and easier maintenance by allowing common functionality to be shared across different classes. -->
+        <div class="card" id="inheritance">
+            <h2>Inheritance</h2>
+            <p>Click an animal to hear it speak:</p>
+            <img src="dog.jpg" alt="Dog" onclick="dogSpeak()" class="animal-img">
+            <img src="cat.jpg" alt="Cat" onclick="catSpeak()" class="animal-img">
+            <img src="cow.jpg" alt="Cow" onclick="cowSpeak()" class="animal-img">
+            <p id="inheritanceResult"></p>
+        </div>
 
-        <!-- Encapsulation: Controlling access to an object's data 
-        The Car class encapsulates the speed property by making it private (using #speed), 
-        so it cannot be directly accessed from outside the class. 
-        The only way to modify or view the speed is through the setSpeed() and getSpeed() methods, 
+        <!-- Encapsulation: Controlling access to an object's data
+        The Car class encapsulates the speed property by making it private (using #speed),
+        so it cannot be directly accessed from outside the class.
+        The only way to modify or view the speed is through the setSpeed() and getSpeed() methods,
         which provide controlled access to the speed property. -->
         <div class="card" id="encapsulation">
             <h2>Encapsulation</h2>
@@ -42,40 +68,22 @@
             <p id="speedResult"></p>
         </div>
 
-        <!-- Inheritance: One class (Dog) derives from another (Animal)
-        Inheritance allows a class (e.g., Dog) to inherit properties and methods from another class (e.g., Animal). 
-        In this case, the Dog class inherits the speak() method from the Animal class but overrides it to provide its own behavior (Bark!). 
-        This allows code reuse and easier maintenance by allowing common functionality to be shared across different classes.
-         focuses more on the idea of creating new classes based on existing ones and code reuse,
---> 
-        <div class="card" id="inheritance">
-            <h2>Inheritance</h2>
-            <button onclick="dogSpeak()">Dog Speak</button>
-            <button onclick="catSpeak()">Cat Speak</button>
-            <button onclick="cowSpeak()">Cow Speak</button>
-            <p id="inheritanceResult"></p>
-        </div>
-
-        <!-- Polymorphism: Different classes implementing the same method differently 
-        Polymorphism allows different animal classes (like Cat and Cow) to implement the same method, 
-        makeSound(), in their own unique ways. 
-        While both classes have a makeSound() method, the implementation differs: 
-        the Cat says 'Meow', and the Cow says 'Moo'. 
-        This allows the same method name to behave differently depending on the class.
-        the ability for different objects to behave differently while still using the same method name.
-        -->
+        <!-- Polymorphism: Different classes implementing the same method differently
+        Polymorphism allows different animal classes (like Cat and Cow) to implement the same method,
+        makeSound(), in their own unique ways.
+        While both classes have a makeSound() method, the implementation differs:
+        the Cat says 'Meow', and the Cow says 'Moo'.
+        This allows the same method name to behave differently depending on the class. -->
         <div class="card" id="polymorphism">
             <h2>Polymorphism</h2>
             <button onclick="animalSounds()">Make Sounds</button>
             <p id="polymorphismResult"></p>
         </div>
 
-        <!-- Abstraction: Hiding implementation details and enforcing method overriding 
-        The Device class makes sure that every device has a turnOn() method, 
+        <!-- Abstraction: Hiding implementation details and enforcing method overriding
+        The Device class makes sure that every device has a turnOn() method,
         but each device can have its own way of turning on.
-        The turnOn() action is overridden in each specific device class to do something
- -->
-         
+        The turnOn() action is overridden in each specific device class to do something. -->
         <div class="card" id="abstraction">
             <h2>Abstraction</h2>
             <button onclick="turnOnDevice('phone')">Turn On Phone</button>
@@ -83,7 +91,6 @@
             <button onclick="turnOnDevice('tablet')">Turn On Tablet</button>
             <p id="abstractionResult"></p>
         </div>
-
     </div>
 
     <script>
@@ -144,7 +151,7 @@
             document.getElementById('inheritanceResult').innerText = cow.speak(); // Calls overridden method
         }
 
-        // Polymorphism: Different classes implementing the same interface (makeSound)
+        // Polymorphism: Different classes implementing the same method differently
         class DogPolymorph {
             makeSound() { return 'Bark'; }
         }
@@ -199,7 +206,6 @@
             }
             document.getElementById('abstractionResult').innerText = device.turnOn(); // Call the respective device's turnOn method
         }
-
     </script>
 </body>
 </html>
