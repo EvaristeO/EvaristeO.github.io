@@ -1,130 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Evariste's cheatsheet</title>
-        <style>
-            body {
-                font-family: Verdana, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f07a7a;
-                text-align: center;
-            }
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evariste's Cheatsheet</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f07a7a;
+            text-align: center;
+        }
 
-            header {
-                background: rgb(204, 162, 162);
-                padding: 20px;
-                border-bottom: 2px solid black;
-            }
-ba
-            h1 {
-                font-size: 72px;
-                margin: 0;
-            }
+        header {
+            background: rgb(204, 162, 162);
+            padding: 20px;
+            border-bottom: 2px solid black;
+        }
 
-            nav ul {
-                list-style: none;
-                padding: 0;
-            }
+        h1 {
+            font-size: 72px;
+            margin: 0;
+        }
 
-            nav ul li {
-                display: inline;
-                margin: 0 15px;
-            }
+        nav {
+            margin-top: 10px;
+        }
 
-            nav ul li a {
-                text-decoration: none;
-                color: rgb(28, 203, 28);
-                font-weight: bold;
-            }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-            main {
-                max-width: 800px;
-                margin: 20px auto;
-                background: white;
-                padding: 20px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                text-align: left;
-            }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
 
-            aside {
-                margin-top: 20px;
-                padding: 15px;
-                background: #e0e0e0;
-                border-radius: 5px;
-            }
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(28, 203, 28);
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
 
-            .quick-list {
-                margin-top: 20px;
-            }
+        nav ul li a:hover {
+            color: black;
+        }
 
-            footer {
-                margin-top: 20px;
-                padding: 10px;
-                background: black;
-                color: white;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Evariste's cheatsheet</h1>
-        </header>
+        .crazy-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-        <nav>
-            <ul>
-                <li><a href="CSS">CSS</a></li> 
-                <li><a href="JAVA">JAVA</a></li>
-                <li><a href="HTML">HTML</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="word.html">Word</a></li> <!-- New link -->
-                <li><a href="OOP.html">OOP</a></li> <!-- New link1 -->
-                <p><a href="crazy.html">Go to Crazy Site →</a></p>
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border-radius: 8px;
+        }
 
+        aside {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e0e0e0;
+            border-radius: 5px;
+        }
 
+        .quick-list {
+            margin-top: 20px;
+        }
 
-            </ul>
-        </nav>
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
 
-        <main>
-            <article>
-                <section id="about">
-                    <h2>About Me</h2>
-                    <p>Welcome to my website! I'm from Rochester, NY, and I attend Roberts Wesleyan.</p>
-                </section>
+<body>
+    <header>
+        <h1>Evariste's Cheatsheet</h1>
+    </header>
 
-                <section id="projects">
-                    <h2>My Links</h2>
-                    <p>Here, I'll showcase my projects/links in the future.</p>
-                    <p>For now, here's a link to my favorite song at the moment:</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XYGEEa4Qcis" 
-        title="YouTube video player" frameborder="0" allowfullscreen>
-                    </iframe>
-                </section>
-            </article>
+    <nav>
+        <ul>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="word.html">Word</a></li>
+            <li><a href="oop.html">OOP</a></li>
+        </ul>
+        <a href="crazy.html" class="crazy-link">Go to Crazy Site →</a>
+    </nav>
 
-            <aside>
-                <h3>Sidebar Content</h3>
-                <p> quick links </p>
-            </aside>
-
-            <section class="quick-list">
-                <h2>Quick List</h2>
-                <ul>
-                    <li><strong>✅ Validate HTML, CSS, and JS</strong></li>
-                    <li><strong>✅ Use structured elements</strong></li>
-                    <li><strong>✅ Style with CSS</strong></li>
-                    <li><strong>✅ Add JavaScript</strong></li>
-                    <li><strong>✅ Test on different browsers</strong></li>
-                </ul>                
+    <main>
+        <article>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Welcome to my website! I'm from Rochester, NY, and I attend Roberts Wesleyan University.</p>
             </section>
-        </main>
 
-        <footer>
-            <p>I'm currently learning HTML, CSS, and JavaScript.</p>
-            <p><script>document.write("Last modified: " + document.lastModified);</script></p>
-        </footer>
-    </body>
+            <section id="projects">
+                <h2>My Links</h2>
+                <p>Here, I'll showcase my projects/links in the future.</p>
+                <p>For now, here's a link to my favorite song at the moment:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XYGEEa4Qcis" 
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </section>
+        </article>
+
+        <aside>
+            <h3>Sidebar Content</h3>
+            <p>Quick navigation and helpful links.</p>
+        </aside>
+
+        <section class="quick-list">
+            <h2>Quick List</h2>
+            <ul>
+                <li><strong>✅ Validate HTML, CSS, and JS</strong></li>
+                <li><strong>✅ Use structured elements</strong></li>
+                <li><strong>✅ Style with CSS</strong></li>
+                <li><strong>✅ Add JavaScript</strong></li>
+                <li><strong>✅ Test on different browsers</strong></li>
+            </ul>                
+        </section>
+    </main>
+
+    <footer>
+        <p>I'm currently learning HTML, CSS, and JavaScript.</p>
+        <p><script>document.write("Last modified: " + document.lastModified);</script></p>
+    </footer>
+</body>
 </html>

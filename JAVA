@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Evariste's Website</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7acff0;
+            text-align: center;
+        }
+
+        header {
+            background: rgb(167, 205, 205);
+            padding: 20px;
+            border-bottom: 2px solid black;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JavaScript</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>What is JavaScript</h2>
+        <p>JavaScript is a versatile scripting language primarily used to create dynamic and interactive effects within web browsers. While HTML structures a webpage and CSS styles it, JavaScript brings it to life by allowing real-time updates, animations, form validation, interactive maps, and more.</p>
+        <p>JavaScript adds behavior to webpages, making them responsive and engaging for users.</p>
+    </main>
+
+    <footer>
+        <p><script>document.write("Last modified: " + document.lastModified);</script></p>
+    </footer>
+</body>
+</html>
