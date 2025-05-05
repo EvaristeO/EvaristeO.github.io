@@ -1,131 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project Table of Contents</title>
+  <meta charset="UTF-8">
+  <title>Project Feature Table of Contents</title>
   <style>
     body {
       font-family: Verdana, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #444;
-      color: white;
+      background-color: #f8f8f8;
       padding: 20px;
+    }
+    h1 {
       text-align: center;
+      color: #222;
     }
-
-    main {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      border-bottom: 2px solid #444;
-      padding-bottom: 5px;
-    }
-
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 30px;
     }
-
     th, td {
-      padding: 10px;
       border: 1px solid #999;
+      padding: 10px;
       text-align: left;
     }
-
     th {
       background-color: #ddd;
     }
-
     a {
-      color: #2a7ae2;
+      color: #0077cc;
       text-decoration: none;
-      font-weight: bold;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     footer {
       margin-top: 40px;
       text-align: center;
-      padding: 15px;
-      background: #444;
-      color: white;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Project Table of Contents</h1>
-    <p>Click each link to view the page and see what features are used</p>
-  </header>
 
-  <main>
-    <h2>Page Features Overview</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Page</th>
-          <th>Link</th>
-          <th>Features Demonstrated</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Crazy Site</td>
-          <td><a href="crazy.html">Open Page</a></td>
-          <td>
-            Arrays, DOM, Forms, CSS classes, JavaScript functions, Variables, Theme Switcher,
-            Superscript, Table, Image, Expression, Event handling
-          </td>
-        </tr>
-        <tr>
-          <td>Contact Page</td>
-          <td><a href="contact.html">Open Page</a></td>
-          <td>
-            HTML Form, Input fields, Styling, Footer, Semantic Layout
-          </td>
-        </tr>
-        <tr>
-          <td>HTML Overview</td>
-          <td><a href="html.html">Open Page</a></td>
-          <td>
-            HTML structure, paragraphs, semantic tags, browser display
-          </td>
-        </tr>
-        <tr>
-          <td>CSS Overview</td>
-          <td><a href="css.html">Open Page</a></td>
-          <td>
-            Selectors (class, id, universal), Padding, Margin, Border, Styling examples
-          </td>
-        </tr>
-        <tr>
-          <td>JavaScript Overview</td>
-          <td><a href="javascript.html">Open Page</a></td>
-          <td>
-            Variables, Functions, Basic DOM manipulation, Expressions
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
+  <h1>🌐 Project Feature Table of Contents</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Where It's Shown</th>
+        <th>Page Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Has good bones (semantic structure)</td>
+        <td>All pages: <code>&lt;header&gt;, &lt;main&gt;, &lt;footer&gt;</code></td>
+        <td><a href="crazy.html">Crazy Site</a>, <a href="contact.html">Contact</a></td>
+      </tr>
+      <tr>
+        <td>Links</td>
+        <td>Navigation menus</td>
+        <td><a href="crazy.html">Crazy Site</a>, <a href="index.html">Homepage</a></td>
+      </tr>
+      <tr>
+        <td><code>&lt;sup&gt;</code> (Superscript)</td>
+        <td>Displayed in math line (e.g. 10<sup>2</sup>)</td>
+        <td><a href="crazy.html#supExample">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>Images</td>
+        <td>Displayed user photo or placeholder image</td>
+        <td><a href="contact.html">Contact Page</a></td>
+      </tr>
+      <tr>
+        <td>Tables</td>
+        <td>Custom feature table</td>
+        <td><a href="crazy.html#tableExample">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>Forms</td>
+        <td>Text input and submit button</td>
+        <td><a href="crazy.html#formArea">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>Padding, Margin, Border</td>
+        <td>CSS styling</td>
+        <td><a href="css.html">CSS Page</a></td>
+      </tr>
+      <tr>
+        <td>CSS Selectors: class, id, universal</td>
+        <td><code>*</code>, <code>.class</code>, <code>#id</code></td>
+        <td><a href="css.html">CSS Page</a></td>
+      </tr>
+      <tr>
+        <td>Change Page Theme (JS + CSS)</td>
+        <td>Dark/Light mode toggle button</td>
+        <td><a href="crazy.html#themeBtn">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>JavaScript Variables</td>
+        <td>Used in quote array + functions</td>
+        <td><a href="crazy.html#quoteBox">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>Expressions</td>
+        <td>JS math/random expression for quote</td>
+        <td><a href="crazy.html#quoteBox">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>Functions</td>
+        <td><code>showRandomMessage()</code>, <code>toggleTheme()</code></td>
+        <td><a href="crazy.html#quoteBox">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>Document Object Model (DOM)</td>
+        <td><code>document.getElementById()</code></td>
+        <td><a href="crazy.html#displayMsg">Crazy Site</a></td>
+      </tr>
+      <tr>
+        <td>Arrays</td>
+        <td>List of motivational messages</td>
+        <td><a href="crazy.html#quoteBox">Crazy Site</a></td>
+      </tr>
+    </tbody>
+  </table>
 
   <footer>
-    <p>Last modified: <script>document.write(document.lastModified);</script></p>
+    <p>Last updated: <script>document.write(document.lastModified);</script></p>
   </footer>
 </body>
 </html>
