@@ -40,17 +40,13 @@
       color: #000;
     }
 
-    .rounded { border-radius: 20px; }
-    .square { border-radius: 0; }
-
     .quote-box {
-  margin-top: 20px;
-  background: #555;
-  padding: 20px;
-  border-left: 5px solid rgb(255, 55, 0);
-}
-
-    
+      margin-top: 20px;
+      background: #555;
+      padding: 20px;
+      border-left: 5px solid rgb(255, 55, 0);
+      transition: background-color 0.5s ease;
+    }
 
     form {
       margin: 30px 0;
@@ -69,17 +65,42 @@
       padding: 10px;
       margin-top: 40px;
     }
+
+    .site-logo {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin: 0 auto 10px;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to the Crazy Site</h1>
+    <img src="crazy-banner.png" alt="Welcome to the Crazy Site" class="site-logo">
     <button id="themeBtn" onclick="toggleTheme()">Change Theme</button>
     <nav>
       <ul>
-          <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
       </ul>
-  </nav>
+    </nav>
   </header>
 
   <main>
@@ -125,30 +146,19 @@
 
     function toggleTheme() {
       const body = document.body;
+      const quoteBox = document.getElementById("quoteBox");
+
       if (body.style.backgroundColor === "white") {
+        // Dark mode
         body.style.backgroundColor = "#222";
         body.style.color = "white";
+        quoteBox.style.backgroundColor = "#555";
       } else {
+        // Light mode
         body.style.backgroundColor = "white";
         body.style.color = "black";
+        quoteBox.style.backgroundColor = "#eee";
       }
-      function toggleTheme() {
-  const body = document.body;
-  const quoteBox = document.getElementById("quoteBox");
-
-  if (body.style.backgroundColor === "white") {
-    // Go back to dark mode
-    body.style.backgroundColor = "#222";
-    body.style.color = "white";
-    quoteBox.style.backgroundColor = "#555";
-  } else {
-    // Switch to light mode
-    body.style.backgroundColor = "white";
-    body.style.color = "black";
-    quoteBox.style.backgroundColor = "#eee"; // lighter gray for light mode
-  }
-}
-
     }
   </script>
 </body>
